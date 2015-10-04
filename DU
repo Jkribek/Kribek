@@ -1,0 +1,25 @@
+import re
+vstupniSoubor = open('vstup.txt','r')
+rozlozeni= vstupniSoubor.readlines()
+vstupniSoubor.close()
+hledani = re.compile('^.\d|^[A]{2}')
+string = ''
+i = 0
+
+while i < len(rozlozeni):
+    riadok = str(rozlozeni[i]) 
+    if re.search(hledani, riadok): 
+        if radek[:6] == 'Data: ':  
+            radek = radek[6:] 
+            radek = radek[1:].replace(',', '\t') 
+            stringNaUlozenie += riadok  
+        else:
+            radek = radek[1:].replace(',', '\t')
+            string += riadok  
+    i += 1 
+
+print(string)
+
+vystupniSoubor = open('vystup.txt','w')
+vystupniSoubor.write(string)
+vystupniSoubor.close()
