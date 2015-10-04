@@ -1,0 +1,2 @@
+# Kribek
+My first repository
