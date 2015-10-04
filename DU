@@ -7,15 +7,15 @@ string = ''
 i = 0
 
 while i < len(rozlozeni):
-    riadok = str(rozlozeni[i]) 
-    if re.search(hledani, riadok): 
+    radek = str(rozlozeni[i]) 
+    if re.search(hledani, radek): 
         if radek[:6] == 'Data: ':  
             radek = radek[6:] 
             radek = radek[1:].replace(',', '\t') 
-            stringNaUlozenie += riadok  
+            string += radek  
         else:
             radek = radek[1:].replace(',', '\t')
-            string += riadok  
+            string += radek  
     i += 1 
 
 print(string)
